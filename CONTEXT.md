@@ -51,6 +51,11 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
   an individual match/round — a quick 1v1 is itself a tournament, so it already has one thread).
 - **Report** — a flag an account holder raises on a comment for admin review. No automated
   hide threshold for MVP.
+- **Tournament win** — being the champion of a completed tournament (`profiles.tournaments_won`).
+  Distinct from a **match win** — winning one match without necessarily winning the tournament
+  (`profiles.match_wins`/`match_losses`).
+- **Placement** — a `tournament_entries.result` value (`champion` or `eliminated_round_N`) set
+  when a tournament completes; queried live per profile, not aggregated.
 
 ## Architecture decisions
 
@@ -60,3 +65,4 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
 - [ADR-0003](docs/adr/0003-voting-and-matchup-mechanics.md) — Voting & matchup mechanics
 - [ADR-0004](docs/adr/0004-tournament-lifecycle.md) — Tournament lifecycle
 - [ADR-0005](docs/adr/0005-comments-and-moderation.md) — Comments & moderation
+- [ADR-0006](docs/adr/0006-profile-and-stats.md) — Profile & stats
