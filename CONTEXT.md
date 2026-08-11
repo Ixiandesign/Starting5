@@ -30,9 +30,19 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
 - **Published** — a lineup made public (one-way transition from draft): visible in feed/profile
   and votable; editable/deletable by its owner only until it's entered into a tournament or
   matchup, at which point it's locked for integrity.
+- **Match** — a single 1v1 vote between two lineups, with an open/closed `status`, a voting
+  window (`opens_at`/`closes_at`), and a `winner_id` once closed. The atomic unit both
+  standalone voting and tournament rounds are built from.
+- **Quick 1v1** — not a separate feature: a tournament with `bracket_size = 2`, i.e. exactly one
+  match. Reuses the tournament creation flow rather than its own code path.
+- **Vote** — a single `(match_id, voter_id|fingerprint, choice_lineup_id)` row, insert-only via
+  the `cast_vote()` RPC. Never updated or deleted — permanent by construction.
+- **Fingerprint** — a random token in a signed, httpOnly cookie identifying an anonymous voter
+  for dedup purposes. Not device/browser fingerprinting.
 
 ## Architecture decisions
 
 - [ADR-0001](docs/adr/0001-auth-session-and-profile-creation.md) — Auth session handling &
   profile creation
 - [ADR-0002](docs/adr/0002-lineup-structure-and-lifecycle.md) — Lineup structure & lifecycle
+- [ADR-0003](docs/adr/0003-voting-and-matchup-mechanics.md) — Voting & matchup mechanics
