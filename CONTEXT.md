@@ -66,6 +66,17 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
 - **Tournament invite** — a targeted, friend-list-based invite to an invite-only tournament
   (`tournament_invites`); a second discovery path alongside the raw invite-code link.
 
+## Visual direction (proposed, not final)
+
+Ticket #11 resolved a first-pass visual direction — **early ESPN / bracket-pool office**: navy
+`#0B1F45` / signal red `#C8102E` / gold `#FFB81C` on a paper-grey ground, Verdana bold caps for
+headers, Courier New for tabular data (votes, records), flat hairline borders with classic
+inset/outset button bevels, dense table-row layout. Proposed comp:
+https://claude.ai/code/artifact/c88d3e9a-7ebc-485c-b2bb-ee4f8d6f6daf — see
+[PRODUCT.md](PRODUCT.md) for full product context. This is a single-shot proposal awaiting owner
+sign-off, not a committed design system; `DESIGN.md` gets written once a human approves a
+direction and the real UI is built (see `/impeccable` new-work flow).
+
 ## Architecture decisions
 
 - [ADR-0001](docs/adr/0001-auth-session-and-profile-creation.md) — Auth session handling &
