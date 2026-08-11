@@ -58,6 +58,8 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
   when a tournament completes; queried live per profile, not aggregated.
 - **Feed** — the main discovery surface: public tournaments needing entrants, and open matches
   needing votes. Identical for logged-out and logged-in visitors; no personalization for MVP.
+- **Friend request** — a `friend_requests` row; `accepted` status *is* the friendship (no
+  separate friendship table). Purely social for MVP — doesn't gate tournament enrollment.
 
 ## Architecture decisions
 
@@ -69,3 +71,4 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
 - [ADR-0005](docs/adr/0005-comments-and-moderation.md) — Comments & moderation
 - [ADR-0006](docs/adr/0006-profile-and-stats.md) — Profile & stats
 - [ADR-0007](docs/adr/0007-main-feed.md) — Main feed
+- [ADR-0008](docs/adr/0008-friend-system.md) — Friend system
