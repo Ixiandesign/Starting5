@@ -56,10 +56,12 @@ CONTEXT.md). License: GPL-3.0.
 
 ## Evidence on Hand
 
-None yet — no real category/item content, screenshots, or demo data exist. This project is
-still in the wayfinder spec phase (no application code in the repo). Any imagery or content
-used in early visual work is illustrative/synthetic and must be labeled as such, not treated as
-real product content.
+Draft category seed content exists at [docs/category-seeds-draft.md](docs/category-seeds-draft.md)
+(4 launch categories, ~24 items each) — **draft only**, not owner-approved or seeded live (see
+wayfinder ticket #12). No screenshots or other demo data exist. This project is still in the
+wayfinder spec phase (no application code in the repo). Any imagery or content used in early
+visual work is illustrative/synthetic and must be labeled as such, not treated as real product
+content.
 
 ## Product Principles
 
