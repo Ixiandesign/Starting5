@@ -18,8 +18,21 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
 - **Display name** — free-text label shown in the UI, 1-40 chars, defaults to username.
 - **Session** — a Supabase Auth session held in `sb-*` cookies, refreshed on every request by
   `src/middleware.ts` via `@supabase/ssr`.
+- **Lineup** — a set of exactly 6 item picks (one per slot) from a single category, created by
+  an account holder. Has one `explanation` and a `status` of `draft` or `published`.
+- **Slot** — one of the 6 fixed positions every lineup has, regardless of category: `PG`, `SG`,
+  `SF`, `PF`, `C`, `SIXTH_MAN`. Every category is lineup-shaped — that's the "Starting 5+1"
+  conceit the app is named for.
+- **Explanation** — required free-text field (10-1000 chars) on a lineup justifying the picks
+  as a whole; shown wherever the lineup is displayed or voted on.
+- **Draft** — a lineup not yet published: private to its owner, freely editable/deletable, not
+  votable or enterable into a tournament/matchup.
+- **Published** — a lineup made public (one-way transition from draft): visible in feed/profile
+  and votable; editable/deletable by its owner only until it's entered into a tournament or
+  matchup, at which point it's locked for integrity.
 
 ## Architecture decisions
 
 - [ADR-0001](docs/adr/0001-auth-session-and-profile-creation.md) — Auth session handling &
   profile creation
+- [ADR-0002](docs/adr/0002-lineup-structure-and-lifecycle.md) — Lineup structure & lifecycle
