@@ -47,6 +47,10 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
   bye never opens for voting — its human entrant auto-advances at seeding time.
 - **Seeding** — the random assignment of entrants (and byes) into bracket slots, triggered at
   the signup deadline or an early creator-triggered start.
+- **Comment** — a threaded (max depth 3), account-gated reply attached to a tournament (never to
+  an individual match/round — a quick 1v1 is itself a tournament, so it already has one thread).
+- **Report** — a flag an account holder raises on a comment for admin review. No automated
+  hide threshold for MVP.
 
 ## Architecture decisions
 
@@ -55,3 +59,4 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
 - [ADR-0002](docs/adr/0002-lineup-structure-and-lifecycle.md) — Lineup structure & lifecycle
 - [ADR-0003](docs/adr/0003-voting-and-matchup-mechanics.md) — Voting & matchup mechanics
 - [ADR-0004](docs/adr/0004-tournament-lifecycle.md) — Tournament lifecycle
+- [ADR-0005](docs/adr/0005-comments-and-moderation.md) — Comments & moderation
