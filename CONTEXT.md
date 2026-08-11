@@ -60,6 +60,11 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
   needing votes. Identical for logged-out and logged-in visitors; no personalization for MVP.
 - **Friend request** — a `friend_requests` row; `accepted` status *is* the friendship (no
   separate friendship table). Purely social for MVP — doesn't gate tournament enrollment.
+- **Inbox item** — an `inbox_items` row (`tournament_invite`, `match_result`,
+  `tournament_result`, or `friend_request`), inserted synchronously by the event-producing
+  action, fetched fresh on page load/navigation (no polling, no realtime).
+- **Tournament invite** — a targeted, friend-list-based invite to an invite-only tournament
+  (`tournament_invites`); a second discovery path alongside the raw invite-code link.
 
 ## Architecture decisions
 
@@ -72,3 +77,4 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
 - [ADR-0006](docs/adr/0006-profile-and-stats.md) — Profile & stats
 - [ADR-0007](docs/adr/0007-main-feed.md) — Main feed
 - [ADR-0008](docs/adr/0008-friend-system.md) — Friend system
+- [ADR-0009](docs/adr/0009-inbox-and-notifications.md) — Inbox & notifications
