@@ -39,6 +39,14 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
   the `cast_vote()` RPC. Never updated or deleted — permanent by construction.
 - **Fingerprint** — a random token in a signed, httpOnly cookie identifying an anonymous voter
   for dedup purposes. Not device/browser fingerprinting.
+- **Tournament** — a single-elimination, randomly seeded bracket over a fixed `bracket_size`
+  (`2`/`4`/`8`/`16`/`32`/`64`), with a `category_mode` (`single_category` | `cross_category`)
+  and a `visibility` (`public` | `invite_only`).
+- **Round** — one layer of a tournament's bracket; all its matches share the same voting window.
+- **Bye** — an unfilled bracket slot from an under-full tournament. A first-round match with a
+  bye never opens for voting — its human entrant auto-advances at seeding time.
+- **Seeding** — the random assignment of entrants (and byes) into bracket slots, triggered at
+  the signup deadline or an early creator-triggered start.
 
 ## Architecture decisions
 
@@ -46,3 +54,4 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
   profile creation
 - [ADR-0002](docs/adr/0002-lineup-structure-and-lifecycle.md) — Lineup structure & lifecycle
 - [ADR-0003](docs/adr/0003-voting-and-matchup-mechanics.md) — Voting & matchup mechanics
+- [ADR-0004](docs/adr/0004-tournament-lifecycle.md) — Tournament lifecycle
