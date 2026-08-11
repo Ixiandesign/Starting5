@@ -56,6 +56,8 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
   (`profiles.match_wins`/`match_losses`).
 - **Placement** — a `tournament_entries.result` value (`champion` or `eliminated_round_N`) set
   when a tournament completes; queried live per profile, not aggregated.
+- **Feed** — the main discovery surface: public tournaments needing entrants, and open matches
+  needing votes. Identical for logged-out and logged-in visitors; no personalization for MVP.
 
 ## Architecture decisions
 
@@ -66,3 +68,4 @@ settle. See `docs/adr/` for the architecturally significant decisions behind the
 - [ADR-0004](docs/adr/0004-tournament-lifecycle.md) — Tournament lifecycle
 - [ADR-0005](docs/adr/0005-comments-and-moderation.md) — Comments & moderation
 - [ADR-0006](docs/adr/0006-profile-and-stats.md) — Profile & stats
+- [ADR-0007](docs/adr/0007-main-feed.md) — Main feed
